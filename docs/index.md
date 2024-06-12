@@ -79,3 +79,16 @@ The JIT compilation policy is the policy that the JVM uses to decide which metho
 
 The `print` policy prints the methods that are going to be compiled.
 
+## Compilation Threshold
+
+With this command we could query default compilation threshold:
+
+```shell
+    jinfo -flag CompileThreshold <pid>
+```
+
+It could be changed with the following command:
+
+```shell
+    jinfo -flag +CompileThreshold=5000 <pid>
+```
