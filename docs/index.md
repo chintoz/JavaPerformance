@@ -54,3 +54,28 @@ The JIT cache size is the maximum size of the code cache. The code cache is the 
 ```
 
 There are other two parameters to configure code cache size that are `-XX:InitialCodeCacheSize` and `-XX:CodeCacheExpansionSize`. The first one is the initial size of the code cache and the second one is the size of the code cache expansion.
+
+To print code cache information it could be used the `-XX:+PrintCodeCache` option.
+
+```shell
+    java -XX:+PrintCodeCache MainClass
+```
+
+## JIT compilation threshold   
+
+The JIT compilation threshold is the number of times a method is called before it is compiled. The default value is 10000. It can be changed with the `-XX:CompileThreshold` option.
+
+```shell
+    java -XX:CompileThreshold=5000 MainClass
+``` 
+
+## JIT compilation policy
+
+The JIT compilation policy is the policy that the JVM uses to decide which methods are going to be compiled. The default policy is the `hotspot` policy. It can be changed with the `-XX:CompileCommand` option.
+
+```shell
+    java -XX:CompileCommand=print MainClass
+```
+
+The `print` policy prints the methods that are going to be compiled.
+
